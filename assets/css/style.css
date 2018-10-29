@@ -5,6 +5,6 @@
 }
 
 .done {
-  background-color: #ccc;
+  color: #ccc;
   text-decoration: line-through;
 }
