@@ -1,3 +1,7 @@
+if (typeof $ == 'undefined') {
+  var $ = jQuery;
+}
+
 // Adds the done class clicked li
 // listens for a li click inside a ul.  This is for dynamicChildren.
 $('ul').on('click', 'li', function() {
@@ -22,6 +26,7 @@ $('input[type="text"]').on('keypress', function(e) {
   if (event.which === 13) {
     console.log($(this).val());
     $('ul').append('<li><span><i class="far fa-trash-alt"></i></span> ' + $(this).val() + '</li>');
+    localStorage.setItem('todolist', $('ul').html());
     $(this).val('');
   }
 });
@@ -35,9 +40,13 @@ $('.fa-plus').on('click', function() {
       .removeClass('fa-plus')
       .addClass('fa-minus');
   } else {
-    $('input[type="text"]').slideUp();
+    $('input[type="text"]').fadeOut();
     $(this)
       .removeClass('fa-minus')
       .addClass('fa-plus');
   }
 });
+
+(function($) {
+  $('ul').html(localStorage.getItem('todolist'));
+})(jQuery);
