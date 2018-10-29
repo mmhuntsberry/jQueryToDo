@@ -1,1 +1,3 @@
-console.log('Fuck!');
+$('li').on('click', function() {
+  $(this).toggleClass('done');
+});
