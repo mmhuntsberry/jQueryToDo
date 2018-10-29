@@ -1,5 +1,9 @@
 body {
-  background: linear-gradient(to right, #005aa7, #fffde4);
+  background: linear-gradient(
+    to right,
+    #ef32d9,
+    #89fffd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #666;
   font-family: 'inconsolata', 'monospace';
 }
@@ -16,7 +20,7 @@ h1 {
 
 #container {
   background-color: #f7f7f7;
-  box-shadow: 0 0 3px rgba(0, 0 0, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   margin: 100px auto;
   width: 400px;
 }
@@ -44,8 +48,10 @@ li:nth-child(2n) {
 
 input[type='text'] {
   background-color: #f7f7f7;
+  border: 3px solid rgba(0, 0, 0, 0);
   box-sizing: border-box;
   color: #2980b9;
+  display: none;
   font-size: 18px;
   width: 100%;
   padding: 13px 13px 13px 20px;
@@ -54,4 +60,29 @@ input[type='text'] {
 input[type='text']:focus {
   background-color: white;
   border: 3px solid #2980b9;
+}
+
+.fa-plus {
+  float: right;
+}
+
+.fa-minus {
+  float: right;
+}
+
+span {
+  background-color: #e74e3c;
+  color: white;
+  display: inline-block;
+  height: 40px;
+  margin-right: 20px;
+  opacity: 0;
+  text-align: center;
+  width: 0px;
+}
+
+li:hover > span {
+  opacity: 1;
+  transition: all 0.25s linear;
+  width: 40px;
 }

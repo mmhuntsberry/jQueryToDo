@@ -21,7 +21,23 @@ $('ul').on('click', 'span', function(e) {
 $('input[type="text"]').on('keypress', function(e) {
   if (event.which === 13) {
     console.log($(this).val());
-    $('ul').append('<li><span>X</span> ' + $(this).val() + '</li>');
+    $('ul').append('<li><span><i class="far fa-trash-alt"></i></span> ' + $(this).val() + '</li>');
     $(this).val('');
+  }
+});
+
+// Animates hiding and displaying of input
+// also changes the plus sign to minus and back again
+$('.fa-plus').on('click', function() {
+  $('input[type="text"]').slideDown();
+  if ($(this).hasClass('fa-plus')) {
+    $(this)
+      .removeClass('fa-plus')
+      .addClass('fa-minus');
+  } else {
+    $('input[type="text"]').slideUp();
+    $(this)
+      .removeClass('fa-minus')
+      .addClass('fa-plus');
   }
 });
